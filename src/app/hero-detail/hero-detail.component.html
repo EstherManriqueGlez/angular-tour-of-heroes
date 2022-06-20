@@ -3,8 +3,17 @@
   <div><span>id: </span>{{ hero.id }}</div>
   <div>
     <label for="hero-name">Hero name: </label>
-    <input id="hero-name" [(ngModel)]="hero.name" placeholder="name" />
+    <mat-form-field appearance="outline">
+      <mat-label>Hero name: </mat-label>
+      <input matInput [(ngModel)]="hero.name" placeholder="name">
+    </mat-form-field>
   </div>
-  <button type="button" (click)="goBack()">Go Back</button>
-  <button type="button" (click)="save()">Save</button>
+
+  <div>
+    <button mat-raised-button class="clear"
+    (click)="goBack()">Go Back</button>
+    <button mat-raised-button class="clear"
+    (click)="save()">Save</button>
+  </div>
+
 </div>

@@ -3,18 +3,13 @@
   <input #searchBox id="search-box" (input)="search(searchBox.value)" />
 
   <!-- <mat-form-field appearance="outline">
-    <mat-label or="search-box">Hero Search</mat-label>
+    <mat-label for="search-box">Hero Search</mat-label>
     <input matInput #searchBox id="search-box" (input)="search(searchBox.value)" >
   </mat-form-field> -->
   
   <ul class="search-result">
-    <li *ngFor="let hero of heroes$ | async">
-      <a routerLink="/detail/{{ hero.id }}">
-        {{ hero.name }}
-      </a>
-    </li>
+    <mat-list role="list" class="search-result">
+      <mat-list-item class="lines" role="listitem" *ngFor="let hero of heroes$ | async"><button mat-button  routerLink="/detail/{{ hero.id }}">{{ hero.name }}</button></mat-list-item>    
+    </mat-list>
   </ul>
-  <!-- <mat-list role="list" class="search-result">
-    <mat-list-item role="listitem" *ngFor="let hero of heroes$ | async"><button mat-button  routerLink="/detail/{{ hero.id }}">{{ hero.name }}</button></mat-list-item>    
-  </mat-list> -->
-</div>
+  </div>
