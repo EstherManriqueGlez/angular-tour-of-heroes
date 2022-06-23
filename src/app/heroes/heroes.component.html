@@ -2,20 +2,20 @@
 
 <div>
   <label for="new-hero">Hero name: </label>
-  <input id="new-hero" #heroName />
-
-  <!-- (click) passes input value to add() and then clears the input -->
-  <button type="button" class="add-button" (click)="add(heroName.value); heroName.value = ''"
-  >
-    Add hero
-  </button>
+  <mat-form-field appearance="outline">
+    <mat-label for="new-hero">Hero</mat-label>
+    <input matInput  id="new-hero" #heroName autocomplete="off">
+  </mat-form-field>
 </div>
 
-<ul class="heroes">
-  <li *ngFor="let hero of heroes">
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button mat-raised-button color="primary" class="add-button" (click)="add(heroName.value); heroName.value = ''" >Add Hero</button>
+
+<mat-list role="list" class="heroes">
+  <mat-list-item role="listitem" *ngFor="let hero of heroes">
     <a routerLink="/detail/{{ hero.id }}">
       <span class="badge">{{ hero.id }}</span> {{ hero.name }}
     </a>
-    <button type="button" class="delete" title="delete hero" (click)="delete(hero)">X</button>
-  </li>
-</ul>
+    <mat-icon matSuffix title="delete hero" class="icon-delete" (click)="delete(hero)">delete</mat-icon>
+  </mat-list-item>
+</mat-list>

@@ -1,12 +1,18 @@
 <div id="search-component">
   <label for="search-box">Hero Search</label>
-  <input #searchBox id="search-box" (input)="search(searchBox.value)" autocomplete="off" />
 
-  <ul class="search-result">
-    <li *ngFor="let hero of heroes$ | async">
+  <mat-form-field appearance="outline">
+    <mat-label for="search-box">Hero</mat-label>
+    <input matInput  #searchBox id="search-box" (input)="search(searchBox.value)" autocomplete="off">
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+
+  <mat-list role="list" class="search-result">
+    <mat-list-item role="listitem" *ngFor="let hero of heroes$ | async">
       <a routerLink="/detail/{{ hero.id }}">
         {{ hero.name }}
       </a>
-    </li>
-  </ul>
+    </mat-list-item>
+  </mat-list>
+  
 </div>

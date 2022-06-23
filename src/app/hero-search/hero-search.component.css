@@ -3,11 +3,11 @@
 label {
   display: block;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-top: 1rem;
   margin-bottom: .5rem;
-
 }
+
 input {
   padding: .5rem;
   width: 100%;
@@ -20,13 +20,15 @@ input:focus {
   outline: #336699 auto 1px;
 }
 
+mat-form-field {
+  margin: 0;
+}
+
 li {
   list-style-type: none;
 }
-.search-result li a {
-  border-bottom: 1px solid gray;
-  border-left: 1px solid gray;
-  border-right: 1px solid gray;
+.search-result mat-list-item a {
+  border: 1px solid gray;
   display: inline-block;
   width: 100%;
   max-width: 600px;
@@ -36,12 +38,16 @@ li {
   color: black;
 }
 
-.search-result li a:hover {
+.search-result mat-list-item a:hover {
   background-color: #435A60;
   color: white;
 }
 
-ul.search-result {
-  margin-top: 0;
-  padding-left: 0;
+.mat-list-base .mat-list-item {
+  height: 38px;
+}
+
+.mat-list-base {
+  padding-top: 0;
+  margin-bottom: 20px;
 }

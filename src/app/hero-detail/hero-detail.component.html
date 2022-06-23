@@ -3,8 +3,12 @@
   <div><span>id: </span>{{ hero.id }}</div>
   <div>
     <label for="hero-name">Hero name: </label>
-    <input id="hero-name" [(ngModel)]="hero.name" placeholder="name" />
+    <mat-form-field class="detail" appearance="outline">
+      <mat-label for="search-box">Name</mat-label>
+      <input matInput id="hero-name" [(ngModel)]="hero.name" placeholder="name"  autocomplete="off">
+    </mat-form-field>
   </div>
-  <button type="button" (click)="goBack()">Go Back</button>
-  <button type="button" (click)="save()">Save</button>
+
+  <button mat-raised-button color="primary" (click)="goBack()" >Go Back</button>
+  <button mat-raised-button color="primary" (click)="save()" >Save</button>
 </div>
