@@ -1,7 +1,10 @@
-<h1>{{ title }}</h1>
-<nav>
-  <a routerLink="/dashboard">Dashboard</a>
-  <a routerLink="/heroes">Heroes</a>
-</nav>
+<mat-toolbar class="mat-elevation-z3" color="primary">
+  <h1>{{ title }}</h1>
+  <span class="navbar"></span>
+  <button mat-button routerLink="/dashboard">Dashboard</button>
+  <button mat-button routerLink="/heroes">Heroes</button>
+  <span class="navbar"></span>
+</mat-toolbar>
+
 <router-outlet></router-outlet>
 <app-messages></app-messages>
